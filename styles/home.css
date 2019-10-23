@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#headBackground{
+    background-color: #4060B9;
+    width: 1000px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo{
+    font-size: 35px;
+    color: white;
+    margin-left: 30px;
+    line-height: 50px;
+    width: 80px;
+}
+
+#userArea{
+    margin-right: 40px;
+    line-height: 50px;
+    font-size: 25px;
+    color: white;
+}
+
+#userName{
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+#corpo{
+    width: 1000px;
+    background-color: #ededed;
+    height: 1000px;
+    margin: auto;
+}

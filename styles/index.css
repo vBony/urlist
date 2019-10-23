@@ -1,0 +1,132 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+#arealogin{
+    position: absolute;
+    width: 600px;
+    height: 650px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #6483d9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo{
+    color: Black;
+    font-family: "Volkhov", serif;
+    font-size: 59px;
+    text-align: center;
+    cursor: default;
+    margin-top: 40px;
+}
+
+#subtitulo{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: #595959;
+    cursor: default;
+}
+
+#areaemail{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#areasenha{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.camposlogin{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: none;
+    background-color: none;
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#areasubmit{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#btnsubmit{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4060b9;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#btnsubmit:hover{
+    background-color: #6483d9;
+}
+
+#registrop{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: #595959;
+    cursor: default;
+    font-family: 'Roboto', sans-serif;
+}
+
+#linkregistro{
+    text-decoration: unset;
+    color: #273c75;
+    font-family: 'Roboto', sans-serif;
+}
+
+#arearegistro{
+    margin-top: 50px;
+}
+
+#alertasucess{
+    background-color: rgba(67, 177, 76, .7);
+    width: 600px;
+    height: 70px;
+    color: black;
+    line-height: 70px;
+    text-indent: 25px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+    
+}
+
+#alertafail{
+    background-color: rgba(237, 28, 36, .7);
+    width: 600px;
+    height: 70px;
+    color: black;
+    line-height: 70px;
+    text-indent: 25px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+}

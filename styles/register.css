@@ -1,0 +1,117 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#arearegistro{
+    position: absolute;
+    width: 900px;
+    height: 800px;
+    border: 1px solid #6483d9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#titulo{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    cursor: default;
+    margin-top: 20px;
+    font-family: "Volkhov", serif;
+}
+
+#arearegistro h1{
+    font-size: 59px;
+}
+
+#subtitulo{
+    font-size: 20px;
+    align-self: center;
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #8b8b8b;
+    cursor: default;
+    font-family: 'Roboto', sans-serif;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.defaultArea{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+.campos{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: none;
+    background-color: none;
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#senhanovamente{
+    margin-top: 20px;
+}
+
+#btnArea{
+    margin-left: 30px;
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btns{
+    width: 30%;
+    height: 40px;
+}
+
+#btnCadastrar{
+    border-radius: 8px;
+    border: none;
+    background-color: #4060b9;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#btnCadastrar:hover{
+    background-color: #6483d9;
+}
+
+#btnCancelar{
+    border-radius: 8px;
+    border: 2px solid #e84118;
+    background-color: white;
+    color: #e84118;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#btnCancelar:hover{
+    color: white;
+    background-color: #e84118;
+}
