@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+ini_set('default_charset','UTF-8');
 class User{
     private $pdo;
 
@@ -9,6 +9,9 @@ class User{
     private $ncelular;
     private $senha;
     private $foto;
+
+    /*No construct eu faço a conexão com o banco e uma condicional que se houver um parametro (ID) no construct
+    logo é puxado algum usuario pelo id e definindo as propriedades do objeto. */
 
     public function __construct($id = ''){ //Tornado a passagem de parametro opcional, pois caso o usuario não existir
         try{
@@ -27,7 +30,7 @@ class User{
             if($sql->rowCount() > 0){
                 $data = $sql->fetch();
 
-                //passando o resultado para os objetos
+                //passando o resultado para as propriedades
                 $this->id = $data['id'];
                 $this->nome = $data['nome'];
                 $this->email = $data['email'];
@@ -40,8 +43,9 @@ class User{
     }
 
 
-
-    public function getID(){ //Não é recomendado SETAR um ID
+    /* Aqui é definido os Getters(Mostrar os dados das propriedades privadas do objeto) 
+    e os Setters (definir um valor para os mesmos).*/
+    public function getID(){ // coloquei um set para o ID por motivos óbvios.
         return $this->id;
     }
 
@@ -84,6 +88,10 @@ class User{
         return $this->foto;
     }
 
+    /*Se caso não houver um id no construct isso significa que o usuário não existe,
+    Então criei uma função que se caso a propriedade ID do objeto estiver vazia, significa
+    que o usuário não existe, então é criado um usuario novo. Caso contrario é feito as
+    as alterações dos dados e enviado pro banco de dados.*/
     public function SalvarOuCriar(){
         if(!empty($this->id)){
 
@@ -117,6 +125,9 @@ class User{
         }
     }
 
+    /*Função para verificar se o usuario que está tentando logar existe,
+    se sim o id do mesmo é passado para uma Session para usar no construct
+    ou em outros casos no futuro.*/
     public function logarUsuario($e, $s){
         $sql = "SELECT * FROM users WHERE email = :email AND senha = :senha";
         $sql = $this->pdo->prepare($sql);
