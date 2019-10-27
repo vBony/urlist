@@ -1,5 +1,5 @@
 <?php
-require "assets/classes/classes.php";
+require "assets/classes/User.class.php";
 
 $user = new User();
 

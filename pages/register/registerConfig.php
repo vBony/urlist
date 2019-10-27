@@ -16,7 +16,7 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
     $senha = md5($_POST['senha']);
     $envio->setSenha($senha);
 
-    $foto = "../../images/";
+    $foto = "../../images/user_img/default.png";
     $envio->setFoto($foto);
 
     $envio->SalvarOuCriar();

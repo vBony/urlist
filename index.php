@@ -1,6 +1,6 @@
 <?php require "indexconfig.php";
-    if(!isset($_GET['status']) && empty($_GET['status'])){
-        $_GET['status'] = "normal";
+    if(!isset($_GET['sts']) && empty($_GET['sts'])){
+        $_GET['sts'] = "none";
     }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Volkhov&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php if($_GET['status'] == "sucesso"){ ?>
+    <?php if($_GET['sts'] == "scs"){ ?>
         <div class="alert alert-success" id="alertasucess">
             <STRONG>Conta criada com sucesso, agora faça login para continuar!</STRONG>
         </div>

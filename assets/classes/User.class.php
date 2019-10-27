@@ -88,8 +88,7 @@ class User{
         return $this->foto;
     }
 
-    /*Se caso não houver um id no construct isso significa que o usuário não existe,
-    Então criei uma função que se caso a propriedade ID do objeto estiver vazia, significa
+    /*Ccriei uma função que se caso a propriedade ID do objeto estiver vazia, significa
     que o usuário não existe, então é criado um usuario novo. Caso contrario é feito as
     as alterações dos dados e enviado pro banco de dados.*/
     public function SalvarOuCriar(){
@@ -121,7 +120,7 @@ class User{
             $sql->bindValue(":foto", $this->foto);
             $sql->execute();
 
-            echo "Usuario criado com sucesso!";
+            header("Location: ../../index.php?sts=scs");
         }
     }
 
