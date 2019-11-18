@@ -15,6 +15,8 @@ include "homeConfig.php";
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="../../scripts/home.js"></script>
     <title>urlist - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="headBackground">
@@ -55,22 +57,34 @@ include "homeConfig.php";
 
 
         <div id="areacontatos">
-            <?php foreach($sql as $dados){?>
-                <div class="contactArea">
-                    <div class="contactImage"></div>
-                    <div class="contactName"><?php echo $dados['nome'];  ?></div>
-                    <div class="contactNumber"><?php echo $dados['telefone'];  ?></div>
-                    <div class="contactEmail"><?php echo $dados['email']; ?></div>
-                    <div class="contactButtons">
-                    <div id="zap">
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $dados['telefone'];?>" id='zap' target="_blank">Mensagem</a>
-                    </div>
-                        <button>email</button>
-                        <button>mudar dados</button>
-                    </div>
-                </div>
-            <?php } ?>
-              
+            <table class="table table-hover">
+                <thead>
+                    <tr class="bg-primary" id="headerLista">
+                        <th scope="col">Nome</th>
+                        <th scope="col">Nº de telefone</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <?php foreach($sql as $dados){?>
+                    <tbody id="tableContatos">
+                        <th scope="row" class="contentLista"> <?php echo $dados['nome'];  ?> </th>
+
+                        <td class="contentLista"> <?php echo $dados['telefone'];  ?> </td>
+
+                        <td class="contentLista"> <?php echo $dados['email']; ?> </td>
+
+                        <td class="contentLista">
+                            <div id="zap" onclick="zapRedirect()">
+                                <a href="https://api.whatsapp.com/send?phone=<?php echo $dados['telefone']?>" target="_blank"><img src="../../images/whatsapp.png" alt=""></a>
+                            </div>
+                        </td>
+                        
+                    </tbody>
+                <?php } ?>
+            </table>
+                
+            
         </div>
 
     </div>

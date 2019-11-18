@@ -140,6 +140,10 @@ class User{
             $dados = $sql->fetch();
             $_SESSION['id'] = $dados['id'];
             header("Location: pages/home/home.php");
+
+            return true;
+        }else{
+            return false;
         }
     }
 

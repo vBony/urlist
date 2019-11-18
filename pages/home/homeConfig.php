@@ -37,6 +37,8 @@ if(isset($_POST['telefone']) && !empty($_POST['telefone'])){
     $contatos->setEmail($email);
     $contatos->setFoto($foto);
     $contatos->salvarContato();
+
+    header("Refresh:0");
 }
 
 

@@ -9,6 +9,10 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
     $senha = md5($_POST['senha']);
 
     $user->logarUsuario($email, $senha);
+
+    if($user->logarUsuario($email, $senha) == false){
+        $_GET['login'] = "false";
+    }
 }
 
 

@@ -130,3 +130,17 @@
     margin-top: 50px;
     border-radius: 15px;
 }
+
+#alertLogin{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    cursor: default;
+}
+
+#fecharBtn{
+    font-weight: bold;
+    cursor: pointer;
+}

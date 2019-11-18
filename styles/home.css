@@ -105,21 +105,11 @@ a:link {
     border-radius: 15px;
     transition: 0.2s;
     cursor: pointer;
+    margin-bottom: 25px;
 }
 
 #addContato:hover{
     background-color: #16358a;
-}
-
-#zap{
-    text-decoration: none;
-    width: 100px;
-    background-color: green;
-    text-align: center;
-    color: white;
-    height: 25px;
-    line-height: 25px;
-    border-radius: 15px;
 }
 
 #addContatoDiv{
@@ -227,4 +217,16 @@ a:link {
 
 #cancelarBtnContato:hover{
     background-color: #700909;
+}
+
+#tableContatos{
+    background-color: #e0efff;
+}
+
+.contentLista{
+    cursor: default;
+}
+
+#headerLista{
+    cursor: default;
 }
