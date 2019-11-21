@@ -107,15 +107,9 @@
 }
 
 #alertasucess{
-    background-color: rgba(67, 177, 76, .7);
     width: 600px;
-    height: 70px;
-    color: black;
-    line-height: 70px;
-    text-indent: 25px;
     margin: auto;
     margin-top: 50px;
-    border-radius: 15px;
     
 }
 

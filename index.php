@@ -1,11 +1,4 @@
 <?php require "indexconfig.php";
-    if(!isset($_GET['sts']) && empty($_GET['sts'])){
-        $_GET['sts'] = "none";
-    }
-
-    if(!isset($_GET['login']) && empty($_GET['login'])){
-        $_GET['login'] = "none";
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

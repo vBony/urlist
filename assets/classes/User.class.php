@@ -139,7 +139,8 @@ class User{
             $dados = array();
             $dados = $sql->fetch();
             $_SESSION['id'] = $dados['id'];
-            header("Location: pages/home/home.php");
+            $_SESSION['login'] = "sim";
+            header("Location: pages/home/home.php?sts=scs");
 
             return true;
         }else{

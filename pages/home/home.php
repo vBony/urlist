@@ -16,12 +16,24 @@ include "homeConfig.php";
     <script src="../../scripts/home.js"></script>
     <title>urlist - Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="headBackground">
         <div id="logo">urlist</div>
-        <div id="userArea">Olá, <span id="userName"><?php echo $user->getNome(); ?></span></div>
+        <div  id="userArea">
+            <p>Olá,  <span id="userName"><?php echo $user->getNome(); ?></span></p>
+            <div id="UserOptions">
+                <span id="userConfigs" onclick="mostrarConfigUsuario()">Configurações</span>
+                <span>|</span>
+                <a href="logout.php" id="userExit">Sair</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="windowUserConfigs">
+
     </div>
 
     <div id="corpo">
@@ -29,10 +41,16 @@ include "homeConfig.php";
             <button id="addContato" onclick="mostrarRegistro()">Adicionar um novo contato</button>
         </div>
 
+        <div id="windowUserConfigs">
+
+        </div>
+
+        
+
         <div id="addContatoDiv">
             <div id="headerDivContato">
-                <p>Adicionar contato</p>
-                <div onclick="sairRegistro()" id="sairContatoDiv">X</div>
+                <p id="txtHeader">Adicionar contato</p>
+                <div onclick="sairRegistro()" id="sairContatoDiv">&times;</div>
             </div>
 
             <div id="areaFormContato">
@@ -54,7 +72,6 @@ include "homeConfig.php";
                 
             </div>
         </div>
-
 
         <div id="areacontatos">
             <table class="table table-hover">
@@ -84,7 +101,6 @@ include "homeConfig.php";
                 <?php } ?>
             </table>
                 
-            
         </div>
 
     </div>

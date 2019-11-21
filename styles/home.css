@@ -41,10 +41,36 @@ a:link {
 }
 
 #userArea{
+    display: flex;
+    flex-direction: row;
     margin-right: 40px;
     line-height: 50px;
     font-size: 25px;
     color: white;
+}
+
+#UserOptions{
+    font-size: 12px;
+    margin-left: 25px;
+}
+
+#userConfigs{
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#userConfigs:hover{
+    color: lightgreen;
+}
+
+#userExit{
+    color: white;
+    transition: 0.2s;
+}
+
+#userExit:hover{
+    color: red;
+    text-decoration: none;
 }
 
 #userName{
@@ -57,6 +83,17 @@ a:link {
     background-color: #ededed;
     height: 1000px;
     margin: auto;
+}
+
+#windowUserConfigs{
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    display: none;
 }
 
 #areacontatos{
@@ -119,9 +156,10 @@ a:link {
     left: 50%;
     transform: translate(-50%);
     width: 500px;
-    background-color: rgb(208, 228, 235);
+    background-color: white;
     border-radius: 10px;
     animation: fadeInDiv 0.3s;
+    box-shadow: 3px 4px 8px -1px rgba(0,0,0,0.75);
     
 }
 
@@ -136,40 +174,37 @@ a:link {
 
 #headerDivContato{
     width: 100%;
-    background-color: #1D7892;
-    height: 35px;
+    background-color: white;
+    height: 50px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-
+    border-bottom: solid 1px black;
+    display: flex;
 }
 
-#headerDivContato > p{
+#txtHeader{
+    margin-top: auto;
     line-height: 35px;
     margin-left: 25px;
     font-size: 18px;
 }
 
 #sairContatoDiv{
-    background-color: #cc2727;
     margin-right: 25px;
     font-weight: bold;
     width: 25px;
     height: 25px;
     text-align: center;
     line-height: 25px;
-    color: white;
+    color: black;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
-    transition: 0.1s;
-}
-
-#sairContatoDiv:hover{
-    background-color: #e80e0e;
+    font-size: 25px;
 }
 
 #areaFormContato{

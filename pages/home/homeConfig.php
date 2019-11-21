@@ -2,9 +2,13 @@
 include "../../assets/classes/User.class.php";
 include "../../assets/classes/contatos.class.php";
 ini_set('default_charset','UTF-8');
+
+if($_SESSION['login'] != "sim"){    //Protegendo se caso o usuário tentar acessar a pagina Home sem efetuar o login, se sim ele é direcionado para a pagina não logado
+    header("Location: naoLogado.html");
+}
+
 $user = new User($_SESSION['id']);
 $contatos = new Contatos();
-
 
 //Puxando os contatos do usuario por aqui (TEMPORARIO)
 try{

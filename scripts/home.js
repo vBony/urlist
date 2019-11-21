@@ -5,3 +5,7 @@ function mostrarRegistro(){
 function sairRegistro(){
     document.getElementById("addContatoDiv").style.display = "none";
 }
+
+function mostrarConfigUsuario(){
+    document.getElementById("windowUserConfigs").style.display = "block";
+}
