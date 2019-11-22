@@ -22,7 +22,7 @@ include "homeConfig.php";
     <div id="headBackground">
         <div id="logo">urlist</div>
         <div  id="userArea">
-            <p>Olá,  <span id="userName"><?php echo $user->getNome(); ?></span></p>
+            <p>Olá,  <span id="userName"><?php echo $userName; ?></span></p>
             <div id="UserOptions">
                 <span id="userConfigs" onclick="mostrarConfigUsuario()">Configurações</span>
                 <span>|</span>
@@ -33,6 +33,30 @@ include "homeConfig.php";
     </div>
 
     <div id="windowUserConfigs">
+        <div id="windowUserConfigsHeader">
+            <div id="configsHeaderTitle">Configurações da conta</div>
+            <div id="configsHeaderExitButton" onclick="sairConfigUsuario()">&times;</div>
+        </div>
+
+        <div id="windowUserConfigsBody">
+            <form action="" method="post">
+                <p class="labelInput" id="nomeUsuarioUserConfigs">Nome: </p>
+                <input type="text" name="nomeUsuario" class="InputContato">
+
+                <p class="labelInput">Email: </p>
+                <input type="email" name="emailUsuario" class="InputContato">
+                <div id="warningUserConfigs">
+                    <p class="labelInput" id="labelUserWarning1">Senha atual: </p>
+                    <input type="password" name="senhaAtualUsuario" class="InputContato" id="senhaUserConfigs1">
+
+                    <p class="labelInput" id="labelUserWarning2" >Nova senha: </p>
+                    <input type="password" name="novaSenha" class="InputContato" id="senhaUserConfigs2">
+                </div>
+
+                <input class="defaultBtnEnviar" type="submit" value="Enviar">
+                <div class="defaultCancelarBtn ConfigsUser" onclick="sairConfigUsuario()">Cancelar</div>
+            </form>
+        </div>
 
     </div>
 
@@ -49,7 +73,7 @@ include "homeConfig.php";
 
         <div id="addContatoDiv">
             <div id="headerDivContato">
-                <p id="txtHeader">Adicionar contato</p>
+                <div id="txtHeader">Adicionar contato</div>
                 <div onclick="sairRegistro()" id="sairContatoDiv">&times;</div>
             </div>
 
@@ -66,7 +90,7 @@ include "homeConfig.php";
 
                     <input type="submit" id="submitBtnContato" value="Adicionar">
 
-                    <div id="cancelarBtnContato" onclick="sairRegistro()">Cancelar</div>
+                    <div class="defaultCancelarBtn" onclick="sairRegistro()">Cancelar</div>
                 </form>
 
                 

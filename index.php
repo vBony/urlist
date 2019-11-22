@@ -42,7 +42,7 @@
             <?php if($_GET['login'] == "false"){ ?>
 
                 <div class="alert alert-danger" role="alert" id="alertLogin">
-                    Usuario ou senha não encontrado, por favor tente novamente!
+                    Email e/ou senha inserido(s) não corresponde a nenhuma conta,<br>por favor tente novamente!
                     <span id="fecharBtn" onclick="fecharEvent()"> X </span>
                 </div>
 

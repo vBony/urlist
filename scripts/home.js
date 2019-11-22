@@ -9,3 +9,8 @@ function sairRegistro(){
 function mostrarConfigUsuario(){
     document.getElementById("windowUserConfigs").style.display = "block";
 }
+
+function sairConfigUsuario(){
+    document.getElementById("windowUserConfigs").style.display = "none";
+}
+

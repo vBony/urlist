@@ -8,6 +8,11 @@ if($_SESSION['login'] != "sim"){    //Protegendo se caso o usuário tentar acess
 }
 
 $user = new User($_SESSION['id']);
+
+//Filtrando somente o nome do sobrenome
+$explode = explode(" ", $user->getNome());
+$userName = $explode[0];
+
 $contatos = new Contatos();
 
 //Puxando os contatos do usuario por aqui (TEMPORARIO)
