@@ -2,8 +2,15 @@
 session_start();
 ini_set('default_charset','UTF-8');
 include "homeConfig.php";
-?>
 
+if(!isset($_GET['events'])){
+    $_GET['events'] = "none";
+}
+
+if(isset($_GET['sts'])){
+    unset($_GET['sts']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -126,6 +133,14 @@ include "homeConfig.php";
             </table>
                 
         </div>
+        
+        <?php if($_GET['events'] == "falha-alteracaocontausuario"){ ?>
+
+            <div class="alertFalha-UserconfigsWindow">
+                
+            </div>
+
+        <?php } ?>
 
     </div>
     

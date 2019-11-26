@@ -124,6 +124,22 @@ class User{
         }
     }
 
+    //Verificação para trocar de senha
+    public function verificarSenha($i, $senhaAtual){
+        $sql = "SELECT * FROM users WHERE senha = :senhaatual AND id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":senhaatual", $senhaAtual);
+        $sql->bindValue("id", $i);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     /*Função para verificar se o usuario que está tentando logar existe,
     se sim o id do mesmo é passado para uma Session para usar no construct
     ou em outros casos no futuro.*/
@@ -147,6 +163,7 @@ class User{
             return false;
         }
     }
+
 
    
 }

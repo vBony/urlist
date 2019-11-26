@@ -20,8 +20,6 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
     $envio->setFoto($foto);
 
     $envio->SalvarOuCriar();
-
-    // header("Location: ../../index.php?status=sucesso");
 }
 
 ?>

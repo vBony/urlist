@@ -346,3 +346,13 @@ a:link {
     margin-top: 25px;
 }
 
+.alertFalha-UserconfigsWindow{
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+}
+

@@ -7,6 +7,12 @@ if($_SESSION['login'] != "sim"){    //Protegendo se caso o usuário tentar acess
     header("Location: naoLogado.html");
 }
 
+
+//Definindo um GET para manipular as janelas de interação
+//entre o backend e o usuario
+$_GET['events'] = "none"; 
+
+//Criando a classe do usuario
 $user = new User($_SESSION['id']);
 
 //Filtrando somente o nome do sobrenome
@@ -50,7 +56,27 @@ if(isset($_POST['telefone']) && !empty($_POST['telefone'])){
     header("Refresh:0");
 }
 
+//Configurações do usuário
+if(!empty($_POST['nomeUsuario']) || !empty($_POST['emailUsuario']) || !empty($_POST['senhaAtualUsuario'])){
+    $novaSenhaUsuario = md5($_POST['novaSenha']);
+    $senhaAtualUsuario = md5($_POST['senhaAtualUsuario']);
 
+    if($user->verificarSenha($_SESSION['id'], $senhaAtualUsuario) === true){
+        if(!empty($_POST['nomeUsuario'])){  //Condição para não enviar o formulario com o nome vazio mas sim mantendo o mesmo nome.
+            $user->setNome($_POST['nomeUsuario']);
+        }
+
+        if(!empty($_POST['emailUsuario'])){
+            $user->setEmail($_POST['emailUsuario']);
+        }
+
+        $user->setSenha($novaSenhaUsuario);
+        $user->salvarOuCriar($_SESSION['id']);
+        header("Refresh: 0");
+    }else{
+        $_GET['events'] = "falha-alteracaocontausuario";
+    }
+}
 
 
 ?>
