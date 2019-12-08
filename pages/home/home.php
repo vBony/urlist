@@ -20,10 +20,8 @@ if(isset($_GET['sts'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../styles/home.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script src="../../scripts/home.js"></script>
     <title>urlist - Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="headBackground">
@@ -31,7 +29,7 @@ if(isset($_GET['sts'])){
         <div  id="userArea">
             <p>Olá,  <span id="userName"><?php echo $userName; ?></span></p>
             <div id="UserOptions">
-                <span id="userConfigs" onclick="mostrarConfigUsuario()">Configurações</span>
+                <span id="userConfigs">Configurações</span>
                 <span>|</span>
                 <a href="logout.php" id="userExit">Sair</a>
             </div>
@@ -42,7 +40,7 @@ if(isset($_GET['sts'])){
     <div id="windowUserConfigs">
         <div id="windowUserConfigsHeader">
             <div id="configsHeaderTitle">Configurações da conta</div>
-            <div id="configsHeaderExitButton" onclick="sairConfigUsuario()">&times;</div>
+            <div id="configsHeaderExitButton">&times;</div>
         </div>
 
         <div id="windowUserConfigsBody">
@@ -61,7 +59,7 @@ if(isset($_GET['sts'])){
                 </div>
 
                 <input class="defaultBtnEnviar" type="submit" value="Enviar">
-                <div class="defaultCancelarBtn ConfigsUser" onclick="sairConfigUsuario()">Cancelar</div>
+                <div class="defaultCancelarBtn ConfigsUser" id="cancelarBtnConfigUser">Cancelar</div>
             </form>
         </div>
 
@@ -69,7 +67,7 @@ if(isset($_GET['sts'])){
 
     <div id="corpo">
         <div id="addNovoContatoArea">
-            <button id="addContato" onclick="mostrarRegistro()">Adicionar um novo contato</button>
+            <button id="addContato">Adicionar um novo contato</button>
         </div>
 
         <div id="windowUserConfigs">
@@ -81,7 +79,7 @@ if(isset($_GET['sts'])){
         <div id="addContatoDiv">
             <div id="headerDivContato">
                 <div id="txtHeader">Adicionar contato</div>
-                <div onclick="sairRegistro()" id="sairContatoDiv">&times;</div>
+                <div id="sairContatoDiv">&times;</div>
             </div>
 
             <div id="areaFormContato">
@@ -97,7 +95,7 @@ if(isset($_GET['sts'])){
 
                     <input type="submit" id="submitBtnContato" value="Adicionar">
 
-                    <div class="defaultCancelarBtn" onclick="sairRegistro()">Cancelar</div>
+                    <div class="defaultCancelarBtn" id="cancelarBtnAddContato">Cancelar</div>
                 </form>
 
                 
@@ -143,6 +141,10 @@ if(isset($_GET['sts'])){
         <?php } ?>
 
     </div>
+
+    <script src="../../assets/frameworks/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../../scripts/home.js"></script>
     
 </body>
 </html>

@@ -1,16 +1,28 @@
-function mostrarRegistro(){
-    document.getElementById("addContatoDiv").style.display = "block";
-}
+$(function(){
+    $("#addContato, #cancelarBtnAddContato, #sairContatoDiv").on('click', function(){
+        $('#addContatoDiv').fadeToggle('fast');
+    });
 
-function sairRegistro(){
-    document.getElementById("addContatoDiv").style.display = "none";
-}
+    $("#userConfigs, #cancelarBtnConfigUser, #configsHeaderExitButton").on('click', function(){
+        $('#windowUserConfigs').fadeToggle('fast');
+    });
 
-function mostrarConfigUsuario(){
-    document.getElementById("windowUserConfigs").style.display = "block";
-}
 
-function sairConfigUsuario(){
-    document.getElementById("windowUserConfigs").style.display = "none";
-}
+});
+
+// function mostrarRegistro(){
+//     document.getElementById("addContatoDiv").style.display = "block";
+// }
+
+// function sairRegistro(){
+//     document.getElementById("addContatoDiv").style.display = "none";
+// }
+
+// function mostrarConfigUsuario(){
+//     document.getElementById("windowUserConfigs").style.display = "block";
+// }
+
+// function sairConfigUsuario(){
+//     document.getElementById("windowUserConfigs").style.display = "none";
+// }
 

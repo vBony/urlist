@@ -149,18 +149,8 @@ a:link {
     width: 500px;
     background-color: white;
     border-radius: 10px;
-    animation: fadeInDiv 0.3s;
     box-shadow: 3px 4px 8px -1px rgba(0,0,0,0.75);
     
-}
-
-@keyframes fadeInDiv{
-    0%{opacity: 0.0;}
-    20%{opacity: 0.2;}
-    40%{opacity: 0.4;}
-    60%{opacity: 0.6;}
-    80%{opacity: 0.8;}
-    100%{opacity: 1;}
 }
 
 #headerDivContato{
@@ -268,7 +258,6 @@ a:link {
     background-color: white;
     display: none;
     box-shadow: 3px 4px 8px -1px rgba(0,0,0,0.75);
-    animation: fadeInDiv 0.3s;
 }
 
 #windowUserConfigsHeader{
