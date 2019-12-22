@@ -24,17 +24,18 @@ if(isset($_GET['sts'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div id="headBackground">
-        <div id="logo">urlist</div>
-        <div  id="userArea">
-            <p>Olá,  <span id="userName"><?php echo $userName; ?></span></p>
-            <div id="UserOptions">
-                <span id="userConfigs">Configurações</span>
-                <span>|</span>
-                <a href="logout.php" id="userExit">Sair</a>
+    <div id="lastHeadBackground">
+        <div id="headBackground">
+            <div id="logo">urlist</div>
+            <div  id="userArea">
+                <p>Olá,  <span id="userName"><?php echo $userName; ?></span></p>
+                <div id="UserOptions">
+                    <span id="userConfigs">Configurações</span>
+                    <span>|</span>
+                    <a href="logout.php" id="userExit">Sair</a>
+                </div>
             </div>
         </div>
-        
     </div>
 
     <div id="windowUserConfigs">
@@ -58,88 +59,98 @@ if(isset($_GET['sts'])){
                     <input type="password" name="novaSenha" class="InputContato" id="senhaUserConfigs2">
                 </div>
 
-                <input class="defaultBtnEnviar" type="submit" value="Enviar">
+                <input class="defaultBtnEnviar ConfigsUser" type="submit" value="Enviar">
                 <div class="defaultCancelarBtn ConfigsUser" id="cancelarBtnConfigUser">Cancelar</div>
             </form>
         </div>
 
     </div>
 
-    <div id="corpo">
-        <div id="addNovoContatoArea">
-            <button id="addContato">Adicionar um novo contato</button>
-        </div>
-
-        <div id="windowUserConfigs">
-
-        </div>
-
-        
-
-        <div id="addContatoDiv">
-            <div id="headerDivContato">
-                <div id="txtHeader">Adicionar contato</div>
-                <div id="sairContatoDiv">&times;</div>
+    <div id="lastCorpo">
+        <div id="corpo">
+            <div id="addNovoContatoArea">
+                <button id="addContato">Adicionar um novo contato</button>
             </div>
 
-            <div id="areaFormContato">
-                <form action="home.php" method="post">
-                    <p class="labelInput">Nome: </p>
-                    <input type="text" name="nome" class="InputContato">
+            <div id="windowUserConfigs">
 
-                    <p class="labelInput">Email: </p>
-                    <input type="email" name="email" class="InputContato">
-                    
-                    <p class="labelInput">Telefone: </p>
-                    <input type="text" name="telefone" class="InputContato" required="required">
-
-                    <input type="submit" id="submitBtnContato" value="Adicionar">
-
-                    <div class="defaultCancelarBtn" id="cancelarBtnAddContato">Cancelar</div>
-                </form>
-
-                
             </div>
-        </div>
 
-        <div id="areacontatos">
-            <table class="table table-hover">
-                <thead>
-                    <tr class="bg-primary" id="headerLista">
-                        <th scope="col">Nome</th>
-                        <th scope="col">Nº de telefone</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <?php foreach($sql as $dados){?>
-                    <tbody id="tableContatos">
-                        <th scope="row" class="contentLista"> <?php echo $dados['nome'];  ?> </th>
+            
 
-                        <td class="contentLista"> <?php echo $dados['telefone'];  ?> </td>
+            <div id="addContatoDiv">
+                <div id="headerDivContato">
+                    <div id="txtHeader">Adicionar contato</div>
+                    <div id="sairContatoDiv">&times;</div>
+                </div>
 
-                        <td class="contentLista"> <?php echo $dados['email']; ?> </td>
+                <div id="areaFormContato">
+                    <form action="home.php" method="post">
+                        <p class="labelInput">Nome: </p>
+                        <input type="text" name="nome" class="InputContato">
 
-                        <td class="contentLista">
-                            <div id="zap" onclick="zapRedirect()">
-                                <a href="https://api.whatsapp.com/send?phone=<?php echo $dados['telefone']?>" target="_blank"><img src="../../images/whatsapp.png" alt=""></a>
-                            </div>
-                        </td>
+                        <p class="labelInput">Email: </p>
+                        <input type="email" name="email" class="InputContato">
                         
-                    </tbody>
-                <?php } ?>
-            </table>
-                
-        </div>
-        
-        <?php if($_GET['events'] == "falha-alteracaocontausuario"){ ?>
+                        <p class="labelInput">Telefone: </p>
+                        <input type="text" name="telefone" class="InputContato" required="required">
 
-            <div class="alertFalha-UserconfigsWindow">
-                
+                        <input type="submit" id="submitBtnContato" value="Adicionar">
+
+                        <div class="defaultCancelarBtn" id="cancelarBtnAddContato">Cancelar</div>
+                    </form>
+
+                    
+                </div>
             </div>
 
-        <?php } ?>
+            <div id="areacontatos">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="bg-primary" id="headerLista">
+                            <th scope="col">Nome</th>
+                            <th scope="col">Nº de telefone</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableContatos">
 
+                        <?php foreach($sql as $dados){?>
+                                <tr data-id="<?php echo $dados['id']; ?>" class="rowsContact">
+                                    <th scope="row" class="contentLista" id="userName"> <?php echo $dados['nome'];  ?> </th>
+
+                                    <td class="contentLista"> <?php echo $dados['telefone'];  ?> </td>
+
+                                    <td class="contentLista"> <?php echo $dados['email']; ?> </td>
+
+                                    <td class="contentLista" id="Tdoptions">
+                                        <div id="zap" onclick="zapRedirect()" class="options">
+                                            <a href="https://api.whatsapp.com/send?phone=<?php echo $dados['telefone']?>" target="_blank"><img src="../../images/whatsapp.png" alt="" title="Conversar no Whatsapp"></a>
+                                        </div>
+
+                                        <div id="delete" class="options">
+                                            <img src="../../images/delete.png" alt="Deletar" title="Deletar este contato" class="deleteContact" data-id="<?php echo $dados['id']?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                        <?php } ?>
+
+                    </tbody>
+                </table>
+
+                    
+            </div>
+            
+            <?php if($_GET['events'] == "falha-alteracaocontausuario"){ ?>
+
+                <div class="alertFalha-UserconfigsWindow">
+                    
+                </div>
+
+            <?php } ?>
+
+        </div>
     </div>
 
     <script src="../../assets/frameworks/jquery-3.4.1.min.js"></script>
