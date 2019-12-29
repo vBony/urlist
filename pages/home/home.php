@@ -117,21 +117,37 @@ if(isset($_GET['sts'])){
                     <tbody id="tableContatos">
 
                         <?php foreach($sql as $dados){?>
-                                <tr data-id="<?php echo $dados['id']; ?>" class="rowsContact">
-                                    <th scope="row" class="contentLista" id="userName"> <?php echo $dados['nome'];  ?> </th>
+                                <tr id="<?php echo $dados['id']; ?>" class="rowsContact">
+                                    <th scope="row" class="contentLista" id="userNameArea">
+                                        <div class="userName" id="userDataName_<?php echo $dados['id']; ?>"> <?php echo $dados['nome'];  ?></div>
+                                        <input type="text" name="inputNome" id="inputNome_<?php echo $dados['id']; ?>" class="input">
+                                    </th>
 
-                                    <td class="contentLista"> <?php echo $dados['telefone'];  ?> </td>
+                                    <td class="contentLista" id="userNumTelefoneArea"> 
+                                        <div class="userNumTelefone" id="userDataTelefone_<?php echo $dados['id']; ?>"><?php echo $dados['telefone'];  ?></div>
+                                        <input type="text" name="inputTelefone" id="inputTelefone_<?php echo $dados['id']; ?>" class="input">
+                                    </td>
 
-                                    <td class="contentLista"> <?php echo $dados['email']; ?> </td>
+                                    <td class="contentLista" id="userEmailArea"> 
+                                        <div class="userEmail" id="userDataEmail_<?php echo $dados['id']; ?>"><?php echo $dados['email']; ?></div>
+                                        <input type="email" name="inputEmail" id="inputEmail_<?php echo $dados['id']; ?>" class="input">
+                                    </td>
 
                                     <td class="contentLista" id="Tdoptions">
-                                        <div id="zap" onclick="zapRedirect()" class="options">
+                                        <div id="zap" onclick="zapRedirect()" class="options zap_<?php echo $dados['id']; ?>">
                                             <a href="https://api.whatsapp.com/send?phone=<?php echo $dados['telefone']?>" target="_blank"><img src="../../images/whatsapp.png" alt="" title="Conversar no Whatsapp"></a>
                                         </div>
-
-                                        <div id="delete" class="options">
+                                        
+                                        <div id="delete" class="options delete_<?php echo $dados['id']; ?>">
                                             <img src="../../images/delete.png" alt="Deletar" title="Deletar este contato" class="deleteContact" data-id="<?php echo $dados['id']?>">
                                         </div>
+                                        
+                                        <div id="editar" class="options delete_<?php echo $dados['id']; ?>">
+                                            <img src="../../images/edit.png" alt="Editar" title="Editar este contato" class="editContato">
+                                        </div>
+
+                                        <input type="submit" value="Salvar" class="btnAttContato" id="submit_<?php echo $dados['id']; ?>">
+                                        <div class="defaultCancelarBtn cancelarBtn_<?php echo $dados['id']; ?> cancelarBtnGlobal" id="btnAttContatoCancelar"  data-id="<?php echo $dados['id']; ?>">Cancelar</div>
                                     </td>
                                 </tr>
                         <?php } ?>

@@ -74,7 +74,7 @@ a:link {
     text-decoration: none;
 }
 
-#userName{
+#userNameArea{
     font-weight: 800;
     letter-spacing: 0.8px;
     cursor: default;
@@ -438,4 +438,72 @@ a:link {
 
 #lastCorpo{
     background-color: #EDEDED;
+}
+
+.userName{
+    /* display: none; */
+    display: block;    
+}
+
+.userNumTelefone{
+    /* display: none; */
+    display: block;
+}
+
+.userEmail{
+    /* display: none; */
+    display: block;
+}
+
+#zap{
+    /* display: none; */
+    display: block;
+}
+
+#delete{
+    /* display: none; */
+    display: block;
+}
+
+.inputNome{
+    display: none;
+    /* display: block; */
+}
+
+.inputTelefone{
+    display: none;
+    /* display: block; */
+
+}
+
+.input{
+    display: none;
+    /* display: block; */
+
+}
+
+
+
+.btnAttContato{
+    width: 90px;
+    border: none;
+    background-color: #4BB543;
+    height: 28px;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    /* display: block; */
+}
+
+#btnAttContatoCancelar{
+    height: 28px;
+    width: 90px;
+    margin-left: 5px;
+    line-height: 26px;
+    display: none;
+    /* display: block; */
+}
+
+#editar{
+    cursor: pointer;
 }
